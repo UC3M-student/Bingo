@@ -31,3 +31,10 @@ def carton_bingo():
         a = a + 1
         carton.append(numbers)
     return carton
+
+a = list(itertools.chain(*carton_bingo()))
+print(a)
+
+
+
+
