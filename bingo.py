@@ -1,3 +1,5 @@
+
+import itertools
 import random as rd
 import numpy as np
 
@@ -30,11 +32,7 @@ def carton_bingo():
             numbers = rd.sample(list__,2)
         a = a + 1
         carton.append(numbers)
-    return carton
-
-a = list(itertools.chain(*carton_bingo()))
-print(a)
-
+    return list(itertools.chain(*carton))
 
 
 
