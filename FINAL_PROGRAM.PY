@@ -95,6 +95,6 @@ for i in number_of_cartons:
     final_list_mean.append(mean_)
 
 
-print(np.round(final_list_mean,0)) #YES SIR¡
+print(np.round(final_list_mean,0)) 
 print("---------------------------------------")
 print(np.round(final_list_stdev,2))
