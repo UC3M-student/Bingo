@@ -4,7 +4,7 @@ import numpy as np
 
 
 bingo_numbers = list(np.arange(1,91,1))
-people = np.arange(1,10000,1)
+people = np.arange(1,100000,1)
 
 def carton_bingo():
     lista_carton = [2,2,2,2,2,2,1,1,1]
@@ -68,14 +68,15 @@ def winner_place(given_list2,bingo_draw):
         del_given_list = del_item_list_of_lists(del_given_list,i)
         for p in del_given_list:
             if len(p)== 0:
-                print(x ,"ALELUYAA")
-                print(del_given_list)
                 break
-                
+        
+        if len(p)== 0:
+            break
+                    
     return x
 
 acc = carton_jugadores()
 
 bbc = bingo_draw()
 
-winner_place(acc,bbc)
+print(winner_place(acc,bbc))
