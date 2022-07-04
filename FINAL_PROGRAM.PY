@@ -3,11 +3,8 @@ import random as rd
 import numpy as np
 import statistics as st
 
-
 bingo_numbers = list(np.arange(1,91,1))
-#people = np.arange(1,3000,1)
-number_of_cartons = np.arange(1,50,1)
-
+number_of_cartons = np.arange(1,150,1) #Choose how many people is playing
 
 def carton_bingo():
     lista_carton = [2,2,2,2,2,2,1,1,1]
@@ -78,21 +75,26 @@ def winner_place(given_list2,bingo_draw):
                     
     return x
 
-final_list = []
+final_list_mean = []
+final_list_stdev = []
 
 for i in number_of_cartons:
     x = 0
     pre_list_mean = []
-    while x <= 100:
+    while x <= 5000: #Choose how many repetitions
         people = np.arange(1,i + 1,1)
         acc = carton_jugadores()
         bbc = bingo_draw()
         wr_place = winner_place(acc,bbc)
         pre_list_mean.append(wr_place)
         x = x + 1
+    stand_dev = st.stdev(pre_list_mean)
     mean_ = st.mean(pre_list_mean)
-    final_list.append(mean_)
     
-print(final_list)
+    final_list_stdev.append(stand_dev)
+    final_list_mean.append(mean_)
+
+
+print(np.round(final_list_mean,0)) #YES SIR¡
 print("---------------------------------------")
-print(np.round(final_list,0)) #YES SIR¡
+print(np.round(final_list_stdev,2))
