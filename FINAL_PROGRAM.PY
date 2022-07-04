@@ -4,7 +4,7 @@ import numpy as np
 import statistics as st
 
 bingo_numbers = list(np.arange(1,91,1))
-number_of_cartons = np.arange(1,150,1) #Choose how many people is playing
+number_of_cartons = np.arange(1,150,1) #Choose how many people are playing
 
 def carton_bingo():
     lista_carton = [2,2,2,2,2,2,1,1,1]
